@@ -54,7 +54,7 @@
             <h2 class="col-md-12 text-center">
                 <span style="font-weight: 900;">UniOcc</span>: 
                 <br>
-                A <span style="font-weight: 900;">U</span>nified <span style="font-weight: 900;">B</span>enchmark for <span style="font-weight: 900;">O</span>ccupancy <span style="font-weight: 900;">F</span>orecasting and <span style="font-weight: 900;">P</span>rediction 
+                A <span style="font-weight: 900;">Uni</span>fied Benchmark for <span style="font-weight: 900;">Occ</span>upancy Forecasting and Prediction 
                 <br>in Autonomous Driving
             </h2>
         </div>
@@ -76,17 +76,20 @@
                 </span>
                 <br>
                 <span>
-                    <strong style="font-size: 20px;"> International Conference on Computer Vision (ICCV), 2025</strong>
+                    <strong style="font-size: 20px;"> IEEE/CVF International Conference on Computer Vision (ICCV), 2025</strong>
                 </span>
                 <br><br>
                     <a href="https://robotics.ucr.edu//">
                         <img src="img/UCR_logo.svg" height="30px" style="margin-right: 40px;"> 
                     </a>
+                    <a href="https://umich.edu/">
+                        <img src="img/UMich_logo.svg" height="30px" style="margin-right: 40px;"> 
+                    </a>
                     <a href="https://www.cs.wisc.edu/">
-                        <img src="img/UWMadison_logo.svg" height="40px" style="margin-right: 40px;"> 
+                        <img src="img/uwmadison_logo.svg" height="35px" style="margin-right: 40px;"> 
                     </a>
                     <a href="https://www.tamu.edu/index.html">
-                        <img src="img/tam_logo.svg" height="120px" style="margin-right: 40px;"> 
+                        <img src="img/Texas_A&M_University_logo.svg" height="30px" style="margin-right: 40px;"> 
                     </a>
                 </ul>
             </div>
@@ -104,6 +107,12 @@
                     <img src="img/github.png" height="45px">
                     <h4><strong>Code</strong></h4>
                 </a>
+            </div>
+            <div class="col-md-2 text-center">
+                <a href="https://huggingface.co/papers/2503.24381">
+                    <img src="img/huggingface-color.svg" height="45px">
+                    <h4><strong>Dataset</strong></h4>
+                </a>
             </div> 
         </div>
 
@@ -112,6 +121,8 @@
                 <br>
                 <h5 class="text-justify text-center">
                     A comprehensive, open-source benchmark unifying 2D/3D occupancy labels, per-voxel flow annotations, and multi-agent support across multiple real-world and synthetic datasets.
+                    <br>
+                    <image src="img/overview.png" width="100%"></image>
                 </h5>
                 <br>
             </div>
@@ -120,18 +131,22 @@
 
         <div class="row justify-content-md-center">
             <div class="col-md-12 col-lg-10">
-                <h4 class="text-justify text-center">
+                <h4 class="text-start">
                     <strong>Our UniOcc Framework</strong>
-                </h4>
-                <p class="text-center">unified:</p>
+                </h4> 
+                <p class="text-start">
+                    enables three representative tasks:
+                    <strong>occupancy prediction</strong>, <strong>occupancy forecasting with optional flow</strong>, and <strong>cooperative occupancy prediction and forecasting with optional flow</strong>
+                </p>
+                <p class="text-start"> by unifying:</p>
                 <ul class="list-group">
 
                     <!-- Item 1 -->
                     <li class="list-group-item">
-                        <a data-bs-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseOne">
-                            ➤ Data Format and Features
+                        <a data-bs-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
+                            <span class="toggle-arrow" data-target="#collapseOne">⬇</span> Data Format and Features
                         </a>
-                        <div class="collapse mt-2" id="collapseOne">
+                        <div class="collapse mt-2 show" id="collapseOne">
                             <div class="card card-body">
                                 We defined Semantic Occupancy Label, Camera Images, Camera Field-of-View (FOV) Mask, Camera Intrinsics and Extrinsics, 
                                 Ego-to-World Transformation, Forward Occupancy Flow, Backward Occupancy Flow, and Object Annotations.
@@ -141,10 +156,10 @@
 
                     <!-- Item 2 -->
                     <li class="list-group-item">
-                        <a data-bs-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
-                            ➤ Datasets
+                        <a data-bs-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="true" aria-controls="collapseTwo">
+                            <span class="toggle-arrow" data-target="#collapseTwo">⬇</span> Datasets
                         </a>
-                        <div class="collapse mt-2" id="collapseTwo">
+                        <div class="collapse mt-2 show" id="collapseTwo">
                             <div class="card card-body">
                                 We build our unified datasets from: nuScenes and Waymo, CARLA, and OpenCOOD.
                             </div>
@@ -153,10 +168,10 @@
 
                     <!-- Item 3 -->
                     <li class="list-group-item">
-                        <a data-bs-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
-                            ➤ Occupancy Processing Toolkit
+                        <a data-bs-toggle="collapse" href="#collapseThree" role="button" aria-expanded="true" aria-controls="collapseThree">
+                            <span class="toggle-arrow" data-target="#collapseThree">⬇</span> Occupancy Processing Toolkit
                         </a>
-                        <div class="collapse mt-2" id="collapseThree">
+                        <div class="collapse mt-2 show" id="collapseThree">
                             <div class="card card-body">
                                 We build tools for Object Identification, Object Tracking, and Object Alignment.
                             </div>
@@ -165,26 +180,19 @@
 
                     <!-- Item 4 -->
                     <li class="list-group-item">
-                        <a data-bs-toggle="collapse" href="#collapseFour" role="button" aria-expanded="false" aria-controls="collapseFour">
-                            ➤ Evaluation Metrics
+                        <a data-bs-toggle="collapse" href="#collapseFour" role="button" aria-expanded="true" aria-controls="collapseFour">
+                            <span class="toggle-arrow" data-target="#collapseFour">⬇</span> Evaluation Metrics
                         </a>
-                        <div class="collapse mt-2" id="collapseFour">
+                        <div class="collapse mt-2 show" id="collapseFour">
                             <div class="card card-body">
                                 We incorporates both Voxel-Based Evaluation and Ground-Truth-Free Evaluation.
                             </div>
                         </div>
                     </li>
-
                 </ul>
-                <br>
-                <p class="text-center">enabling three representative tasks: <br>
-                    <strong>occupancy prediction</strong>, <strong>occupancy forecasting with optional flow</strong>, <br>and <strong>cooperative occupancy prediction and forecasting with optional flow</strong>
-                </p>
                 <br>
             </div>
         </div>
-
-        <br> 
     </div>
     
     <div class="container" id="main">
@@ -215,12 +223,13 @@
                     Key Ideas and Contributions
                 </h3>
                 <p class="text-justify">
-                    <p style="text-align:center;">
-                        <image src="img/overview.png" width="100%">
+                    <p style="text-align:start;">
                     <strong>1) <em>First-of-its-kind</em> unified 2D/3D occupancy forecasting and prediction benchmark</strong>: including flow information for conventional and cooperative driving by unifying real data from nuScenes and Waymo and synthetic data from CARLA & OpenCOOD.<br>
                     <strong>2) a <em>user-friendly</em> platform for current-frame occupancy prediction and multi-frame occupancy forecasting</strong>: enabling easy setup, cross-dataset augmentation, and comprehensive occupancy evaluation with or without reference to ground-truth labels<br>
                     <strong>3) <em>State-of-the-art</em> performance of our pipeline and the proposed evaluation metrics on <em>state-of-the-art</em> occupancy forecasting/prediction models</strong>: showing that (1) incorporating flow information yields performance gains in occupancy forecasting and (2) existing methods face challenges in cross-domain generalization, highlighting avenues for future research.
+                    <image src="img/table1.png" width="100%"></image>
                     <br>
+                    </p>
                 </p>
         </div>
         <br>
@@ -247,7 +256,8 @@
                 </h3>
                 <p class="text-justify">
                     <p style="text-align:center;">
-                        <image src="img/qualitative_result.png" width="100%">
+                        <image src="img/qualitative_result.png" width="100%"></image>
+                    </p>
                 </p>
             </div>
             <br>
@@ -264,9 +274,9 @@
 @inproceedings{wang2025uniocc,
     title={UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving},
     author={Wang, Yuping and Huang, Xiangyu and Sun, Xiaokang and Yan, Mingxuan and Xing, Shuo and Tu, Zhengzhong and Li, Jiachen},
-    journal={ICCV},
+    journal={IEEE/CVF International Conference on Computer Vision},
     year={2025},
-    publisher={ICCV}
+    publisher={IEEE}
 }</textarea>
                 </div>
             </div>
@@ -276,3 +286,18 @@
     <script>hljs.highlightAll();</script>
 </body>
 </html>
+
+<script>
+  document.querySelectorAll('.collapse').forEach(collapseEl => {
+    const id = collapseEl.id;
+    const arrowSpan = document.querySelector(`.toggle-arrow[data-target="#${id}"]`);
+
+    collapseEl.addEventListener('show.bs.collapse', () => {
+      if (arrowSpan) arrowSpan.textContent = '⬇';
+    });
+
+    collapseEl.addEventListener('hide.bs.collapse', () => {
+      if (arrowSpan) arrowSpan.textContent = '➤';
+    });
+  });
+</script>
