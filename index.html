@@ -276,9 +276,9 @@
         <div class="row justify-content-md-center">
             <div class="col-md-12 col-lg-10">
                 <h3>
-                    Citation 
+                    Citation
                 </h3>
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-12 citation-container">
                     <textarea id="bibtex" class="form-control" rows="6" readonly>
 @inproceedings{wang2025uniocc,
     title={UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving},
@@ -287,6 +287,7 @@
     year={2025},
     publisher={IEEE}
 }</textarea>
+                    <button id="copyButton" class="btn btn-secondary btn-sm copy-btn">Copy</button>
                 </div>
             </div>
         </div>
@@ -309,4 +310,28 @@
       if (arrowSpan) arrowSpan.textContent = '➤';
     });
   });
+</script>
+
+<script>
+    document.getElementById('copyButton').addEventListener('click', function() {
+        // Find the textarea element
+        var bibtexTextarea = document.getElementById('bibtex');
+        
+        // Use the modern Clipboard API
+        navigator.clipboard.writeText(bibtexTextarea.value).then(() => {
+            // Give user feedback
+            this.textContent = 'Copied!';
+            this.classList.remove('btn-secondary');
+            this.classList.add('btn-success');
+            
+            // Revert the button text after 2 seconds
+            setTimeout(() => {
+                this.textContent = 'Copy';
+                this.classList.remove('btn-success');
+                this.classList.add('btn-secondary');
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    });
 </script>
