@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDP1K371MK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-CDP1K371MK');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSSR6942QL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FSSR6942QL');
+    </script>
+
+    <title>UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving</title>
+    <!-- <link rel="icon" type="image/png" href="img/favicon_2.png"> -->
+
+    <meta name="description" content="UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bulma-myscope.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="js/bulma-carousel.min.js"></script>
+    <script src="js/bulma-slider.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/app.js"></script>
+
+    <style>
+        .nav-pills {
+          position: relative;
+          display: inline;
+        }
+        .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main">
+        <div class="row mt-4">
+            <h2 class="col-md-12 text-center">
+                <span style="font-weight: 900;">UniOcc</span>: 
+                <br>
+                A <span style="font-weight: 900;">Uni</span>fied Benchmark for <span style="font-weight: 900;">Occ</span>upancy Forecasting and Prediction 
+                <br>in Autonomous Driving
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                <li><a href="https://www.linkedin.com/in/yuping-wang-5a7178185/">Yuping Wang*</a></li>
+                <li><a href="https://www.linkedin.com/in/xiangyu-huang-606089292">Xiangyu Huang*</a></li>
+                <li><a href="https://scholar.google.com/citations?user=2sWnAjQAAAAJ&hl=en">Xiaokang Sun*</a></li>
+                <li><a href="https://waterhyacinthinnanhu.github.io/">Mingxuan Yan</a></li>
+                <li><a href="https://shuoxing98.github.io/">Shuo Xing</a></li>
+                <li><a href="https://vztu.github.io/">Zhengzhong Tu</a></li>
+                <li><a href="https://jiachenli94.github.io/">Jiachen Li</a><sup style="font-size: smaller;">&Dagger;</sup></li>
+                <br>
+                <span style="font-size: small;">
+                    *Equal contribution, 
+                    &Dagger;Corresponding author
+                </span>
+                <br>
+                <span>
+                    <strong style="font-size: 20px;"> IEEE/CVF International Conference on Computer Vision (ICCV), 2025</strong>
+                </span>
+                <br><br>
+                    <a href="https://robotics.ucr.edu//">
+                        <img src="img/UCR_logo.svg" height="30px" style="margin-right: 40px;"> 
+                    </a>
+                    <a href="https://umich.edu/">
+                        <img src="img/UMich_logo.svg" height="30px" style="margin-right: 40px;"> 
+                    </a>
+                    <a href="https://www.cs.wisc.edu/">
+                        <img src="img/uwm_logo.svg" height="35px" style="margin-right: 40px;"> 
+                    </a>
+                    <a href="https://www.tamu.edu/index.html">
+                        <img src="img/tamu_logo_new.svg" height="35px" style="margin-right: 40px;"> 
+                    </a>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row justify-content-md-center">
+            <div class="col-md-2 text-center">
+                <a href="https://arxiv.org/abs/2503.24381">
+                    <img src="img/arxiv.svg" height="45px">
+                    <h4><strong>Paper</strong></h4>
+                </a>
+            </div>
+            <div class="col-md-2 text-center">
+                <a href="https://github.com/tasl-lab/uniocc">
+                    <img src="img/github.png" height="45px">
+                    <h4><strong>Code</strong></h4>
+                </a>
+            </div>
+            <div class="col-md-2 text-center">
+                <a href="https://huggingface.co/papers/2503.24381">
+                    <img src="img/huggingface-color.svg" height="45px">
+                    <h4><strong>Dataset</strong></h4>
+                </a>
+            </div> 
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 col-lg-10">
+                <br>
+                <h5 class="text-justify text-center">
+                    A comprehensive, open-source benchmark unifying 2D/3D occupancy labels, per-voxel flow annotations, and multi-agent support across multiple real-world and synthetic datasets.
+                    <br>
+                    <image src="img/overview.png" width="100%"></image>
+                </h5>
+                <br>
+            </div>
+        </div>
+        
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 col-lg-10">
+                <h4 class="text-start">
+                    <strong>Our UniOcc Framework</strong>
+                </h4> 
+                <p class="text-start">
+                    enables three representative tasks:
+                    <strong>occupancy prediction</strong>, <strong>occupancy forecasting with optional flow</strong>, and <strong>cooperative occupancy prediction and forecasting with optional flow</strong>
+                </p>
+                <p class="text-start"> by unifying:</p>
+                <ul class="list-group">
+
+                    <!-- Item 1 -->
+                    <li class="list-group-item">
+                        <a data-bs-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
+                            <span class="toggle-arrow" data-target="#collapseOne">⬇</span> Data Format and Features
+                        </a>
+                        <div class="collapse mt-2 show" id="collapseOne">
+                            <div class="card card-body">
+                                We define Semantic Occupancy Label, Camera Images, Camera Field-of-View (FOV) Mask, Camera Intrinsics and Extrinsics, 
+                                Ego-to-World Transformation, Forward Occupancy Flow, Backward Occupancy Flow, and Object Annotations.
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Item 2 -->
+                    <li class="list-group-item">
+                        <a data-bs-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="true" aria-controls="collapseTwo">
+                            <span class="toggle-arrow" data-target="#collapseTwo">⬇</span> Datasets
+                        </a>
+                        <div class="collapse mt-2 show" id="collapseTwo">
+                            <div class="card card-body">
+                                We build our unified datasets from: nuScenes, Waymo, CARLA, and OpenCOOD.
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Item 3 -->
+                    <li class="list-group-item">
+                        <a data-bs-toggle="collapse" href="#collapseThree" role="button" aria-expanded="true" aria-controls="collapseThree">
+                            <span class="toggle-arrow" data-target="#collapseThree">⬇</span> Occupancy Processing Toolkit
+                        </a>
+                        <div class="collapse mt-2 show" id="collapseThree">
+                            <div class="card card-body">
+                                We build tools for Object Identification, Object Tracking, and Object Alignment.
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Item 4 -->
+                    <li class="list-group-item">
+                        <a data-bs-toggle="collapse" href="#collapseFour" role="button" aria-expanded="true" aria-controls="collapseFour">
+                            <span class="toggle-arrow" data-target="#collapseFour">⬇</span> Evaluation Metrics
+                        </a>
+                        <div class="collapse mt-2 show" id="collapseFour">
+                            <div class="card card-body">
+                                We incorporate both Voxel-Based Evaluation and Ground-Truth-Free Evaluation.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <br>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="main">
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 col-lg-10">
+                <h3 class="mt-4 mb-2">
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    We introduce UniOcc, a comprehensive, unified benchmark for occupancy forecasting (i.e., predicting
+                    future occupancies based on historical information) and current-frame occupancy prediction from
+                    camera images. UniOcc unifies data from multiple real-world datasets (i.e., nuScenes, Waymo)
+                    and high-fidelity driving simulators (i.e., CARLA, OpenCOOD), which provides 2D/3D occupancy
+                    labels with per-voxel flow annotations and support for cooperative autonomous driving. In terms
+                    of evaluation, unlike existing studies that rely on suboptimal pseudo labels for evaluation, UniOcc
+                    incorporates novel metrics that do not depend on ground-truth occupancy, enabling robust assessment
+                    of additional aspects of occupancy quality. Through extensive experiments on state-of-the-art models,
+                    we demonstrate that large-scale, diverse training data and explicit flow information significantly
+                    enhance occupancy prediction and forecasting performance.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 col-lg-10">
+                <br>
+                <h3>
+                    Key Ideas and Contributions
+                </h3>
+                <p class="text-justify">
+                    <p style="text-align:start;">
+                    <strong>1) <em>First-of-its-kind</em> unified 2D/3D occupancy forecasting and prediction benchmark</strong>: including flow information for conventional and cooperative driving by unifying real data from nuScenes and Waymo and synthetic data from CARLA & OpenCOOD.<br>
+                    <strong>2) A <em>user-friendly</em> platform for current-frame occupancy prediction and multi-frame occupancy forecasting</strong>: enabling easy setup, cross-dataset augmentation, and comprehensive occupancy evaluation with or without reference to ground-truth labels<br>
+                    <strong>3) <em>State-of-the-art</em> performance of our pipeline and evaluation metrics on <em>leading</em> occupancy forecasting/prediction models</strong>: showing that (1) incorporating flow information yields performance gains in occupancy forecasting and (2) existing methods face challenges in cross-domain generalization, highlighting avenues for future research.
+                    <image src="img/table1.png" width="100%"></image>
+                    <br>
+                    </p>
+                </p>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 col-lg-10">
+                <br>
+                <h3>
+                    Quantitative Results of Cross Data Source Training and Evaluation for Occupancy Forecasting
+                </h3>
+                <p class="text-justify">
+                    <p style="text-align:center;">
+                        <image src="img/quantitative_result.png" width="100%">
+                </p>
+            </div>
+            <br>
+        </div>
+        <br>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 col-lg-10">
+                <br>
+                <h3>
+                    Qualitative Results of Occupancy Prediction
+                </h3>
+                <p class="text-justify">
+                    <p style="text-align:center;">
+                        <image src="img/qualitative_result.png" width="100%"></image>
+                    </p>
+                </p>
+            </div>
+            <br>
+        </div>
+        <br>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 col-lg-10">
+                <h3>
+                    Citation
+                </h3><button id="copyButton" class="btn btn-secondary btn-sm copy-btn">Copy</button>
+                <div class="form-group col-md-12 citation-container">
+                    <textarea id="bibtex" class="form-control" rows="6" readonly>
+@inproceedings{wang2025uniocc,
+    title={UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving},
+    author={Wang, Yuping and Huang, Xiangyu and Sun, Xiaokang and Yan, Mingxuan and Xing, Shuo and Tu, Zhengzhong and Li, Jiachen},
+    booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    year={2025},
+    publisher={IEEE}
+}</textarea>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
+
+<script>
+  document.querySelectorAll('.collapse').forEach(collapseEl => {
+    const id = collapseEl.id;
+    const arrowSpan = document.querySelector(`.toggle-arrow[data-target="#${id}"]`);
+
+    collapseEl.addEventListener('show.bs.collapse', () => {
+      if (arrowSpan) arrowSpan.textContent = '⬇';
+    });
+
+    collapseEl.addEventListener('hide.bs.collapse', () => {
+      if (arrowSpan) arrowSpan.textContent = '➤';
+    });
+  });
+</script>
+
+<script>
+    document.getElementById('copyButton').addEventListener('click', function() {
+        // Find the textarea element
+        var bibtexTextarea = document.getElementById('bibtex');
+        
+        // Use the modern Clipboard API
+        navigator.clipboard.writeText(bibtexTextarea.value).then(() => {
+            // Give user feedback
+            this.textContent = 'Copied!';
+            this.classList.remove('btn-secondary');
+            this.classList.add('btn-success');
+            
+            // Revert the button text after 2 seconds
+            setTimeout(() => {
+                this.textContent = 'Copy';
+                this.classList.remove('btn-success');
+                this.classList.add('btn-secondary');
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    });
+</script>
