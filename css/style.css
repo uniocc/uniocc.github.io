@@ -259,3 +259,15 @@ body {
     height: 40px;
   }
 }
+
+/* Make entire line clickable */
+.list-group-item {
+  padding: 0; /* Remove padding from the <li> */
+}
+
+.list-group-item a {
+  display: block; /* Make the link fill the parent's width */
+  padding: 0.75rem 1.25rem; /* Add padding to the link itself */
+  text-decoration: none; /* Optional: removes the underline */
+  color: #0d6efd; /* Optional: makes the link color match surrounding text */
+}
