@@ -1,0 +1,261 @@
+/* Style the video container */
+#bg-video {
+    /* Position it in the background */
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Place it behind all other content */
+
+    /* Ensure it covers the entire screen */
+    min-width: 100%;
+    min-height: 100%;
+
+    /* This is the magic sauce for maintaining aspect ratio */
+    object-fit: cover;
+}
+
+/* Style overlay content */
+.content {
+    position: relative;
+    z-index: 1; /* Make sure content is above the video */
+    color: white;
+    text-align: center;
+    padding-top: 20vh; /* Adjust as needed */
+}
+
+/* Style the overlay in CSS */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: rgba(255,255,255,0.1); /* White */
+    opacity: 0.1;
+    z-index: -1; /* Position it between the video and the content */
+}
+
+/* Define the regular weight */
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Define the bold weight */
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* --- Apply the font --- */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, strong, b {
+  font-weight: 700; /* Uses the bold font file */
+}
+
+h5, p {
+  font-weight: 400; /* Uses the regular font file */
+}
+
+/* Dataset cards */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F8F9FA;
+    color: #212529;
+}
+.spec-card {
+    padding: 1.5rem; /* This is equivalent to p-6 in Tailwind (24px) */
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    border: 1px solid #E9ECEF;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.spec-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+.uniocc-card {
+    background-color: #073B4C;
+    color: #FFFFFF;
+    border: 2px solid #06D6A0;
+    transform: scale(1.02);
+}
+.spec-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #E9ECEF;
+}
+.uniocc-card .spec-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.spec-item:last-child {
+    border-bottom: none;
+}
+.spec-icon {
+    margin-right: 0.75rem;
+    color: #118AB2;
+    width: 20px;
+    text-align: center;
+}
+.uniocc-card .spec-icon {
+    color: #06D6A0;
+}
+.format-card, .toolkit-card {
+    background-color: #FFFFFF;
+    border-radius: 0.75rem;
+    border: 1px solid #E9ECEF;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    padding: 2rem;
+}
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #073B4C;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #118AB2;
+}
+.format-list, .api-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.format-list li, .api-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+.key, .api-func {
+    font-family: 'Roboto';
+    background-color: #E9ECEF;
+    color: #495057;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.description {
+    color: #6C757D;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+.nested-list {
+    list-style-type: none;
+    padding-left: 1.5rem;
+    margin-top: 0.75rem;
+    border-left: 2px solid #DEE2E6;
+}
+.nested-list li {
+    padding-left: 1rem;
+    position: relative;
+}
+.nested-list li::before {
+    content: '↳';
+    position: absolute;
+    left: -0.5rem;
+    top: 0;
+    color: #118AB2;
+    font-weight: bold;
+}
+.nav-pills {
+  position: relative;
+  display: inline;
+}
+.imtip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.spec-list {
+  /* Ensure the list itself has some left/right spacing if needed, though padding on card should cover it */
+  /* padding: 0 1rem; */
+}
+
+.spec-item {
+  display: flex;
+  align-items: flex-start; /* Align items to the start (top) if text wraps */
+  margin-bottom: 0.8rem; /* More space between items */
+  line-height: 1.3; /* Adjust line height for wrapped text */
+}
+
+.spec-item .spec-icon {
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  margin-right: 0.5rem; /* Space between icon and text */
+}
+
+.spec-item strong {
+  flex-shrink: 0; /* Prevent bold text from shrinking */
+  margin-right: 0.5rem; /* Space between key and value */
+  white-space: nowrap; /* Prevent "Data Source:" from wrapping too early */
+}
+
+.spec-item .ml-auto {
+  margin-left: auto;
+  text-align: right; /* Ensure the value text is right-aligned */
+  word-break: break-word; /* Allow long words to break if necessary */
+}
+
+/* Style for general text blocks like Abstract and Key Ideas */
+.text-section-bg {
+  background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+  padding: 1.5rem 2rem;                       /* Add padding around the text */
+  border-radius: 8px;                         /* Slightly rounded corners */
+  margin-bottom: 1.5rem;                      /* Space below the section */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+}
+
+/* Style for text within Bootstrap cards (like collapsible items) */
+.card-body {
+  background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+  padding: 1.5rem;                           /* Ensure good padding */
+  border-radius: 8px;                        /* Match rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);  /* Lighter shadow */
+}
+
+.top-left-logo {
+  position: fixed; /* Keep the logo in place even when scrolling */
+  top: 20px;       /* Distance from the top of the viewport */
+  left: 20px;      /* Distance from the left of the viewport */
+  z-index: 1050;   /* Ensure it's above other content, including Bootstrap's default z-indexes */
+  height: 50px;    /* Set a height for the logo */
+  width: auto;     /* Maintain aspect ratio */
+  opacity: 0.9;    /* Slightly transparent to blend a bit with background */
+}
+
+/* For smaller screens, might want to adjust its size */
+@media (max-width: 768px) {
+  .top-left-logo {
+    top: 10px;
+    left: 10px;
+    height: 40px;
+  }
+}
+
+/* Style for the top-right logo */
+.top-right-logo {
+  position: fixed; /* Keep the logo in place even when scrolling */
+  top: 20px;       /* Distance from the top of the viewport */
+  right: 20px;     /* Distance from the right of the viewport */
+  z-index: 1050;   /* Ensure it's above other content */
+  height: 50px;    /* Set a height for the logo */
+  width: auto;     /* Maintain aspect ratio */
+  opacity: 0.9;    /* Slightly transparent */
+}
+
+/* For smaller screens, adjust size and position if needed */
+@media (max-width: 768px) {
+  .top-right-logo {
+    top: 10px;
+    right: 10px;
+    height: 40px;
+  }
+}

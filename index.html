@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head lang="en">
     <!-- Google tag (gtag.js) -->
@@ -8,24 +8,14 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
+
       gtag('config', 'G-CDP1K371MK');
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSSR6942QL"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-FSSR6942QL');
-    </script>
-
     <title>UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving</title>
-    <!-- <link rel="icon" type="image/png" href="img/favicon_2.png"> -->
+     <link rel="icon" href="favicon.ico">
 
     <meta name="description" content="UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,6 +25,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/bulma-myscope.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
@@ -45,25 +36,26 @@
     <script src="js/index.js"></script>
     <script src="js/app.js"></script>
 
-    <style>
-        .nav-pills {
-          position: relative;
-          display: inline;
-        }
-        .imtip {
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-    </style>
 </head>
-<body>
+<body class="antialiased">
+    <a href="https://iccv.thecvf.com"> <img src="img/iccv.jpg" alt="ICCV 2025 Logo" class="top-left-logo">
+    </a>
+
+    <a href="http://tasl.ucr.edu/"> <img src="img/tasl.png" alt="TASL Logo" class="top-right-logo">
+    </a>
+
+    <video autoplay muted loop playsinline id="bg-video" >
+        <source src="video/TrackingDemo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+
     <div class="container" id="main">
         <div class="row mt-4">
             <h2 class="col-md-12 text-center">
-                <span style="font-weight: 900;">UniOcc</span>: 
+                <span style="font-weight: 900;">UniOcc</span>:
                 <br>
-                A <span style="font-weight: 900;">Uni</span>fied Benchmark for <span style="font-weight: 900;">Occ</span>upancy Forecasting and Prediction 
+                A <span style="font-weight: 900;">Uni</span>fied Benchmark for <span style="font-weight: 900;">Occ</span>upancy Forecasting and Prediction
                 <br>in Autonomous Driving
             </h2>
         </div>
@@ -80,30 +72,30 @@
                 <li><a href="https://jiachenli94.github.io/">Jiachen Li</a><sup style="font-size: smaller;">&Dagger;</sup></li>
                 <br>
                 <span style="font-size: small;">
-                    *Equal contribution, 
+                    *Equal contribution,
                     &Dagger;Corresponding author
                 </span>
                 <br>
-                <span>
-                    <strong style="font-size: 20px;"> IEEE/CVF International Conference on Computer Vision (ICCV), 2025</strong>
+                <span style="font-weight: 900; font-size: 20px;">
+                    IEEE/CVF International Conference on Computer Vision (ICCV), 2025
                 </span>
                 <br><br>
                     <a href="https://robotics.ucr.edu//">
-                        <img src="img/UCR_logo.svg" height="30px" style="margin-right: 40px;"> 
+                        <img src="img/UCR_logo.svg" height="30px" style="margin-right: 40px;">
                     </a>
                     <a href="https://umich.edu/">
-                        <img src="img/UMich_logo.svg" height="30px" style="margin-right: 40px;"> 
+                        <img src="img/UMich_logo.svg" height="30px" style="margin-right: 40px;">
                     </a>
                     <a href="https://www.cs.wisc.edu/">
-                        <img src="img/uwm_logo.svg" height="35px" style="margin-right: 40px;"> 
+                        <img src="img/uwm_logo.svg" height="35px" style="margin-right: 40px;">
                     </a>
                     <a href="https://www.tamu.edu/index.html">
-                        <img src="img/tamu_logo_new.svg" height="35px" style="margin-right: 40px;"> 
+                        <img src="img/tamu_logo_new.svg" height="35px" style="margin-right: 40px;">
                     </a>
                 </ul>
             </div>
         </div>
-        
+
         <div class="row justify-content-md-center">
             <div class="col-md-2 text-center">
                 <a href="https://arxiv.org/abs/2503.24381">
@@ -122,91 +114,337 @@
                     <img src="img/huggingface-color.svg" height="45px">
                     <h4><strong>Dataset</strong></h4>
                 </a>
-            </div> 
+            </div>
         </div>
 
         <div class="row justify-content-md-center">
             <div class="col-md-12 col-lg-10">
                 <br>
                 <h5 class="text-justify text-center">
-                    A comprehensive, open-source benchmark unifying 2D/3D occupancy labels, per-voxel flow annotations, and multi-agent support across multiple real-world and synthetic datasets.
+                    A comprehensive, open-source benchmark unifying 2D/3D occupancy labels, per-voxel flow annotations across multiple real-world and synthetic datasets.
                     <br>
                     <image src="img/overview.png" width="100%"></image>
                 </h5>
                 <br>
             </div>
         </div>
-        
 
         <div class="row justify-content-md-center">
             <div class="col-md-12 col-lg-10">
+                <div class="text-section-bg">
                 <h4 class="text-start">
-                    <strong>Our UniOcc Framework</strong>
-                </h4> 
+                    <span>Our UniOcc Framework</span>
+                </h4>
                 <p class="text-start">
                     enables three representative tasks:
-                    <strong>occupancy prediction</strong>, <strong>occupancy forecasting with optional flow</strong>, and <strong>cooperative occupancy prediction and forecasting with optional flow</strong>
+                    <strong>occupancy prediction</strong>, <strong>occupancy forecasting with optional flow</strong>, and <strong>cooperative occupancy prediction and forecasting</strong>
                 </p>
                 <p class="text-start"> by unifying:</p>
                 <ul class="list-group">
-
                     <!-- Item 1 -->
                     <li class="list-group-item">
-                        <a data-bs-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
-                            <span class="toggle-arrow" data-target="#collapseOne">⬇</span> Data Format and Features
+                        <a data-bs-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseOne">
+                            <span class="toggle-arrow" data-target="#collapseOne">➤</span> Data Format and Features
                         </a>
-                        <div class="collapse mt-2 show" id="collapseOne">
+                        <div class="collapse mt-2" id="collapseOne">
                             <div class="card card-body">
-                                We define Semantic Occupancy Label, Camera Images, Camera Field-of-View (FOV) Mask, Camera Intrinsics and Extrinsics, 
-                                Ego-to-World Transformation, Forward Occupancy Flow, Backward Occupancy Flow, and Object Annotations.
+                                <section id="format">
+                                    <div class="row g-4">
+                                        <div class="col-lg-4">
+                                            <div class="format-card">
+                                                <h3 class="section-title">File Structure</h3>
+                                                <ul class="format-list">
+                                                    <li>
+                                                        <span class="key">scene_infos.pkl</span>
+                                                        <p class="description pl-2">A list of dictionaries, each containing the scene name, start and end frame, and other metadata.</p>
+                                                    </li>
+                                                    <li>
+                                                        <span class="key">scene_XXX</span>
+                                                         <p class="description pl-2">A directory containing the data for a single scenario.</p>
+                                                    </li>
+                                                    <li>
+                                                        <span class="key">YYY.npz</span>
+                                                        <p class="description pl-2">A NumPy file containing the following data for a single time step.</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-8">
+                                            <div class="format-card">
+                                                <h3 class="section-title">Core Data (`.npz` file contents)</h3>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <ul class="format-list">
+                                                            <li><span class="key">occ_label</span><p class="description">A 3D occupancy grid (L x W x H) with semantic labels.</p></li>
+                                                            <li><span class="key">occ_mask_camera</span><p class="description">A 3D grid (L x W x H) with binary values, with 1 indicating the voxel is in the camera FOV and 0 otherwise.</p></li>
+                                                            <li><span class="key">occ_flow_forward</span><p class="description">A 3D flow field (L x W x H x 3) with voxel flow vectors pointing to each voxel’s next frame coordinate.</p></li>
+                                                            <li><span class="key">occ_flow_backward</span><p class="description">A 3D flow field pointing to each voxel’s previous frame coordinate.</p></li>
+                                                            <li><span class="key">ego_to_world_transformation</span><p class="description">A 4x4 transformation matrix from the ego vehicle to the world coordinate system.</p></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                         <ul class="format-list">
+                                                            <li>
+                                                                <span class="key">cameras</span>: <span class="description">List of camera objects.</span>
+                                                                <ul class="nested-list">
+                                                                    <li><span class="key">name</span><p class="description">e.g. CAM_FRONT</p></li>
+                                                                    <li><span class="key">filename</span><p class="description">Relative path to image.</p></li>
+                                                                    <li><span class="key">intrinsics</span><p class="description">3x3 intrinsic matrix.</p></li>
+                                                                    <li><span class="key">extrinsics</span><p class="description">4x4 camera-to-ego matrix.</p></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <span class="key">annotations</span>: <span class="description">List of object annotations.</span>
+                                                                <ul class="nested-list">
+                                                                    <li><span class="key">token</span><p class="description">Original object token.</p></li>
+                                                                    <li><span class="key">agent_to_ego</span><p class="description">4x4 object-to-ego matrix.</p></li>
+                                                                    <li><span class="key">agent_to_world</span><p class="description">4x4 object-to-world matrix.</p></li>
+                                                                    <li><span class="key">size</span><p class="description">Bounding box in meters (L,W,H).</p></li>
+                                                                    <li><span class="key">category_id</span><p class="description">Semantic class ID.</p></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
                             </div>
                         </div>
                     </li>
 
                     <!-- Item 2 -->
                     <li class="list-group-item">
-                        <a data-bs-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="true" aria-controls="collapseTwo">
-                            <span class="toggle-arrow" data-target="#collapseTwo">⬇</span> Datasets
+                        <a data-bs-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+                            <span class="toggle-arrow" data-target="#collapseTwo">➤</span> Datasets
                         </a>
-                        <div class="collapse mt-2 show" id="collapseTwo">
+                        <div class="collapse mt-2" id="collapseTwo">
                             <div class="card card-body">
-                                We build our unified datasets from: nuScenes, Waymo, CARLA, and OpenCOOD.
+                                <section id="specs">
+                                    <div class="row g-4">
+
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="spec-card p-6">
+                                                <h3 class="text-2xl font-bold mb-4 text-center">Occ3D nuScenes</h3>
+                                                <div class="spec-list">
+                                                    <div class="spec-item"><span class="spec-icon">&#128206;</span><strong>Data Source:</strong><span class="ml-auto font-mono">nuScenes</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#9200;</span><strong>Length:</strong><span class="ml-auto font-mono">9.5 hrs</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#127916;</span><strong>Scenarios:</strong><span class="ml-auto font-mono">1110</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128253;</span><strong>Sampling Rate:</strong><span class="ml-auto font-mono">2 Hz</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128207;</span><strong>Resolution:</strong><span class="ml-auto font-mono">0.2 / 0.4 m</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128663;</span><strong>Flow:</strong><span class="ml-auto font-mono">-</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128290;</span><strong>Obj Categories:</strong><span class="ml-auto font-mono">17</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="spec-card p-6">
+                                                <h3 class="text-2xl font-bold mb-4 text-center">Occ3D Waymo</h3>
+                                                <div class="spec-list">
+                                                    <div class="spec-item"><span class="spec-icon">&#128206;</span><strong>Data Source:</strong><span class="ml-auto font-mono">Waymo</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#9200;</span><strong>Length:</strong><span class="ml-auto font-mono">4.0 hrs</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#127916;</span><strong>Scenarios:</strong><span class="ml-auto font-mono">998</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128253;</span><strong>Sampling Rate:</strong><span class="ml-auto font-mono">10 Hz</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128207;</span><strong>Resolution:</strong><span class="ml-auto font-mono">0.2 / 0.4 m</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128663;</span><strong>Flow:</strong><span class="ml-auto font-mono">-</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128290;</span><strong>Obj Categories:</strong><span class="ml-auto font-mono">15</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="spec-card p-6">
+                                                <h3 class="text-2xl font-bold mb-4 text-center">SurroundOcc</h3>
+                                                <div class="spec-list">
+                                                    <div class="spec-item"><span class="spec-icon">&#128206;</span><strong>Data Source:</strong><span class="ml-auto font-mono">nuScenes</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#9200;</span><strong>Length:</strong><span class="ml-auto font-mono">9.5 hrs</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#127916;</span><strong>Scenarios:</strong><span class="ml-auto font-mono">1110</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128253;</span><strong>Sampling Rate:</strong><span class="ml-auto font-mono">2 Hz</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128207;</span><strong>Resolution:</strong><span class="ml-auto font-mono">0.5 m</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128663;</span><strong>Flow:</strong><span class="ml-auto font-mono">-</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128290;</span><strong>Obj Categories:</strong><span class="ml-auto font-mono">17</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="spec-card p-6">
+                                                <h3 class="text-2xl font-bold mb-4 text-center">OpenOccupancy</h3>
+                                                <div class="spec-list">
+                                                    <div class="spec-item"><span class="spec-icon">&#128206;</span><strong>Data Source:</strong><span class="ml-auto font-mono">nuScenes</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#9200;</span><strong>Length:</strong><span class="ml-auto font-mono">9.5 hrs</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#127916;</span><strong>Scenarios:</strong><span class="ml-auto font-mono">1110</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128253;</span><strong>Sampling Rate:</strong><span class="ml-auto font-mono">2 Hz</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128207;</span><strong>Resolution:</strong><span class="ml-auto font-mono">0.1 m</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128663;</span><strong>Flow:</strong><span class="ml-auto font-mono">-</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128290;</span><strong>Obj Categories:</strong><span class="ml-auto font-mono">17</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="spec-card p-6">
+                                                <h3 class="text-2xl font-bold mb-4 text-center">CoHFF</h3>
+                                                <div class="spec-list">
+                                                    <div class="spec-item"><span class="spec-icon">&#128206;</span><strong>Data Source:</strong><span class="ml-auto font-mono">OpenCOOD</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#9200;</span><strong>Length:</strong><span class="ml-auto font-mono">0.69 hrs</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#127916;</span><strong>Scenarios:</strong><span class="ml-auto font-mono">44</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128253;</span><strong>Sampling Rate:</strong><span class="ml-auto font-mono">10 Hz</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128207;</span><strong>Resolution:</strong><span class="ml-auto font-mono">1.0 m</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128663;</span><strong>Flow:</strong><span class="ml-auto font-mono">-</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128290;</span><strong>Obj Categories:</strong><span class="ml-auto font-mono">10</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="spec-card uniocc-card p-6">
+                                                <h3 class="text-2xl font-bold mb-4 text-center">UniOcc (Ours)</h3>
+                                                <div class="spec-list">
+                                                    <div class="spec-item"><span class="spec-icon">&#128206;</span><strong>Data Source:</strong><span class="ml-auto font-mono text-right">nuScenes, Waymo, CARLA, OpenCOOD</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#9200;</span><strong>Length:</strong><span class="ml-auto font-mono">14.2+ hrs</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#127916;</span><strong>Scenarios:</strong><span class="ml-auto font-mono">2152</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128253;</span><strong>Sampling Rate:</strong><span class="ml-auto font-mono">2 Hz / 10 Hz</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128207;</span><strong>Resolution:</strong><span class="ml-auto font-mono">0.2 / 0.4 m</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128663;</span><strong>Flow:</strong><span class="ml-auto font-mono font-bold text-teal-300">Voxel Level</span></div>
+                                                    <div class="spec-item"><span class="spec-icon">&#128290;</span><strong>Obj Categories:</strong><span class="ml-auto font-mono">10, 15, 17</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
                             </div>
                         </div>
                     </li>
 
                     <!-- Item 3 -->
                     <li class="list-group-item">
-                        <a data-bs-toggle="collapse" href="#collapseThree" role="button" aria-expanded="true" aria-controls="collapseThree">
-                            <span class="toggle-arrow" data-target="#collapseThree">⬇</span> Occupancy Processing Toolkit
+                        <a data-bs-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+                            <span class="toggle-arrow" data-target="#collapseThree">➤</span> Occupancy Processing Toolkit
                         </a>
-                        <div class="collapse mt-2 show" id="collapseThree">
+                        <div class="collapse mt-2" id="collapseThree">
                             <div class="card card-body">
-                                We build tools for Object Identification, Object Tracking, and Object Alignment.
+                                <section id="toolkit" class="mt-16 pt-8">
+                                    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                        <div class="toolkit-card">
+                                            <h3 class="section-title">Occupancy Space Utilities</h3>
+                                            <ul class="api-list">
+                                                <li><span class="api-func">GetVoxelCoordinates</span><p class="description">Compute voxel indices in a 3D grid occupied by a transformed bounding box.</p></li>
+                                                <li><span class="api-func">VoxelToCorners</span><p class="description">Convert voxel indices to 3D bounding-box corner coordinates.</p></li>
+                                                <li><span class="api-func">OccFrameToEgoFrame</span><p class="description">Transform voxel coordinates between occupancy and ego-centric frames.</p></li>
+                                                <li><span class="api-func">AlignToCentroid</span><p class="description">Recenter voxel coordinates by subtracting their centroid.</p></li>
+                                                <li><span class="api-func">RasterizeCoordsToGrid</span><p class="description">Convert a list of voxel coordinates into a binary 3D occupancy grid.</p></li>
+                                                <li><span class="api-func">AlignWithPCA</span><p class="description">Rotate voxel point clouds to align with principal axes using PCA.</p></li>
+                                                <li><span class="api-func">SegmentVoxels</span><p class="description">Perform 3D connected-component labeling (CCL) on an occupancy grid.</p></li>
+                                                <li><span class="api-func">EstimateEgoMotionFromFlows</span><p class="description">Estimate ego-motion from voxel flow fields using RANSAC.</p></li>
+                                                <li><span class="api-func">TrackOccObjects</span><p class="description">Track objects across frames using voxel flows and estimated ego-motion.</p></li>
+                                                 <li><span class="api-func">BipartiteMatch</span><p class="description">Solve the optimal assignment problem (Hungarian algorithm) to associate objects.</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="toolkit-card">
+                                            <h3 class="section-title">Voxel Flow Computation</h3>
+                                            <ul class="api-list">
+                                                <li><span class="api-func">ComputeFlowsForObjects</span><p class="description">Compute flow vectors for all foreground (dynamic) objects.</p></li>
+                                                <li><span class="api-func">ComputeFlowsForBackground</span><p class="description">Compute static scene flow due to ego-motion for background voxels.</p></li>
+                                                <li><span class="api-func">ComputeFlowsForOccupancyGrid</span><p class="description">Combine dynamic and static flow to produce a complete scene flow grid.</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="toolkit-card">
+                                            <h3 class="section-title">Evaluation Metrics</h3>
+                                            <ul class="api-list">
+                                                <li><span class="api-func">FindGMMForCategory</span><p class="description">Fit a Gaussian-Mixture Model (GMM) to object dimensions for a given category.</p></li>
+                                                <li><span class="api-func">ComputeObjectLikelihoods</span><p class="description">Score object shapes against the pretrained GMM to get plausibility probabilities.</p></li>
+                                                <li><span class="api-func">ComputeTemporalShapeConsistencyByTracking</span><p class="description">Track objects and report mean IoU of consecutive shapes for temporal consistency.</p></li>
+                                                <li><span class="api-func">ComputeStaticConsistency</span><p class="description">Warp static voxels between frames and compute IoU for background stability.</p></li>
+                                                <li><span class="api-func">ComputeIoU</span><p class="description">Compute standard intersection-over-union between two occupancy grids.</p></li>
+                                                <li><span class="api-func">ComputeIoUForCategory</span><p class="description">Compute IoU restricted to voxels of a single semantic class.</p></li>
+                                            </ul>
+                                        </div>
+                                        <div class="toolkit-card">
+                                            <h3 class="section-title">Visualization API</h3>
+                                             <ul class="api-list">
+                                                <li><span class="api-func">FillRoadInOcc</span><p class="description">Ensure the bottom-most slice of the occupancy grid contains labeled road voxels.</p></li>
+                                                <li><span class="api-func">CreateOccHandle</span><p class="description">Build a full Open3D visualizer for rendering occupancy grids.</p></li>
+                                                <li><span class="api-func">AddFlowToVisHandle</span><p class="description">Draw flow vectors on the Open3D visualizer for motion inspection.</p></li>
+                                                <li><span class="api-func">AddCenterEgoToVisHandle</span><p class="description">Add the ego vehicle model to the visualizer.</p></li>
+                                                <li><span class="api-func">VisualizeOcc</span><p class="description">Create a visualizer for a static occupancy grid.</p></li>
+                                                <li><span class="api-func">VisualizeOccFlow</span><p class="description">Visualize both occupancy and voxel-level flow vectors in 3D.</p></li>
+                                                <li><span class="api-func">VisualizeOccFlowFile</span><p class="description">Load and visualize data from an .npz file.</p></li>
+                                                <li><span class="api-func">RotateO3DCamera</span><p class="description">Load camera parameters and apply them to the current visualizer view.</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                     </li>
 
                     <!-- Item 4 -->
                     <li class="list-group-item">
-                        <a data-bs-toggle="collapse" href="#collapseFour" role="button" aria-expanded="true" aria-controls="collapseFour">
-                            <span class="toggle-arrow" data-target="#collapseFour">⬇</span> Evaluation Metrics
+                        <a data-bs-toggle="collapse" href="#collapseFour" role="button" aria-expanded="false" aria-controls="collapseFour">
+                            <span class="toggle-arrow" data-target="#collapseFour">➤</span> Evaluation Metrics
                         </a>
-                        <div class="collapse mt-2 show" id="collapseFour">
+                        <div class="collapse mt-2" id="collapseFour">
                             <div class="card card-body">
-                                We incorporate both Voxel-Based Evaluation and Ground-Truth-Free Evaluation.
+                                <section id="eval" class="mt-16 pt-8">
+                                    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                        <div class="eval-card">
+                                            <ul class="api-list">
+                                                <li><span class="api-func">FindGMMForCategory</span><p class="description">Fit a Gaussian-Mixture Model (GMM) to object dimensions for a given category.</p></li>
+                                                <li><span class="api-func">ComputeObjectLikelihoods</span><p class="description">Score object shapes against the pretrained GMM to get plausibility probabilities.</p></li>
+                                                <li><span class="api-func">ComputeTemporalShapeConsistencyByTracking</span><p class="description">Track objects and report mean IoU of consecutive shapes for temporal consistency.</p></li>
+                                                <li><span class="api-func">ComputeStaticConsistency</span><p class="description">Warp static voxels between frames and compute IoU for background stability.</p></li>
+                                                <li><span class="api-func">ComputeIoU</span><p class="description">Compute standard intersection-over-union between two occupancy grids.</p></li>
+                                                <li><span class="api-func">ComputeIoUForCategory</span><p class="description">Compute IoU restricted to voxels of a single semantic class.</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                     </li>
+
+                     <!-- Item 5 -->
+                    <li class="list-group-item">
+                        <a data-bs-toggle="collapse" href="#collapseFive" role="button" aria-expanded="false" aria-controls="collapseFive">
+                            <span class="toggle-arrow" data-target="#collapseFive">➤</span> Visualization API
+                        </a>
+                        <div class="collapse mt-2" id="collapseFive">
+                            <div class="card card-body">
+                                <section id="viz" class="mt-16 pt-8">
+                                    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                        <div class="toolkit-card">
+                                             <ul class="api-list">
+                                                <li><span class="api-func">FillRoadInOcc</span><p class="description">Ensure the bottom-most slice of the occupancy grid contains labeled road voxels.</p></li>
+                                                <li><span class="api-func">CreateOccHandle</span><p class="description">Build a full Open3D visualizer for rendering occupancy grids.</p></li>
+                                                <li><span class="api-func">AddFlowToVisHandle</span><p class="description">Draw flow vectors on the Open3D visualizer for motion inspection.</p></li>
+                                                <li><span class="api-func">AddCenterEgoToVisHandle</span><p class="description">Add the ego vehicle model to the visualizer.</p></li>
+                                                <li><span class="api-func">VisualizeOcc</span><p class="description">Create a visualizer for a static occupancy grid.</p></li>
+                                                <li><span class="api-func">VisualizeOccFlow</span><p class="description">Visualize both occupancy and voxel-level flow vectors in 3D.</p></li>
+                                                <li><span class="api-func">VisualizeOccFlowFile</span><p class="description">Load and visualize data from an .npz file.</p></li>
+                                                <li><span class="api-func">RotateO3DCamera</span><p class="description">Load camera parameters and apply them to the current visualizer view.</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </li>
+
                 </ul>
+                </div>
                 <br>
             </div>
         </div>
-    </div>
-    
-    <div class="container" id="main">
+
         <div class="row justify-content-md-center">
             <div class="col-md-12 col-lg-10">
+                <div class="text-section-bg">
                 <h3 class="mt-4 mb-2">
                     Abstract
                 </h3>
@@ -222,11 +460,13 @@
                     we demonstrate that large-scale, diverse training data and explicit flow information significantly
                     enhance occupancy prediction and forecasting performance.
                 </p>
+                </div>
             </div>
         </div>
 
         <div class="row justify-content-md-center">
             <div class="col-md-12 col-lg-10">
+                <div class="text-section-bg">
                 <br>
                 <h3>
                     Key Ideas and Contributions
@@ -240,18 +480,19 @@
                     <br>
                     </p>
                 </p>
+                </div>
+            </div>
         </div>
         <br>
         <div class="row justify-content-md-center">
             <div class="col-md-12 col-lg-10">
+                <div class="text-section-bg">
                 <br>
-                <h3>
-                    Quantitative Results of Cross Data Source Training and Evaluation for Occupancy Forecasting
-                </h3>
-                <p class="text-justify">
-                    <p style="text-align:center;">
-                        <image src="img/quantitative_result.png" width="100%">
+                <h3>Quantitative Results of Cross Data Source Training and Evaluation for Occupancy Forecasting</h3>
+                <p style="text-align:center;">
+                    <image src="img/quantitative_result.png" width="100%"></image>
                 </p>
+            </div>
             </div>
             <br>
         </div>
@@ -259,6 +500,7 @@
         <br>
         <div class="row justify-content-md-center">
             <div class="col-md-12 col-lg-10">
+                <div class="text-section-bg">
                 <br>
                 <h3>
                     Qualitative Results of Occupancy Prediction
@@ -269,28 +511,53 @@
                     </p>
                 </p>
             </div>
+            </div>
             <br>
         </div>
         <br>
 
         <div class="row justify-content-md-center">
             <div class="col-md-12 col-lg-10">
+                <div class="text-section-bg">
                 <h3>
                     Citation
                 </h3><button id="copyButton" class="btn btn-secondary btn-sm copy-btn">Copy</button>
                 <div class="form-group col-md-12 citation-container">
                     <textarea id="bibtex" class="form-control" rows="6" readonly>
-@inproceedings{wang2025uniocc,
-    title={UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving},
-    author={Wang, Yuping and Huang, Xiangyu and Sun, Xiaokang and Yan, Mingxuan and Xing, Shuo and Tu, Zhengzhong and Li, Jiachen},
-    booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-    year={2025},
-    publisher={IEEE}
-}</textarea>
-                    </div>
+                        @inproceedings{wang2025uniocc,
+                            title={UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving},
+                            author={Wang, Yuping and Huang, Xiangyu and Sun, Xiaokang and Yan, Mingxuan and Xing, Shuo and Tu, Zhengzhong and Li, Jiachen},
+                            booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+                            year={2025},
+                            publisher={IEEE}
+                        }</textarea>
+                </div>
+            </div>
             </div>
         </div>
-    </div>
+
+     </div> <footer class="container" style="text-align: center; padding: 20px 0; color: #777; font-size: 14px;">
+        <hr>
+        <p>Copyright (c) 2025 Yuping Wang</p>
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:</p>
+
+        <p>The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.</p>
+
+        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.</p>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>hljs.highlightAll();</script>
 </body>
@@ -299,15 +566,21 @@
 <script>
   document.querySelectorAll('.collapse').forEach(collapseEl => {
     const id = collapseEl.id;
-    const arrowSpan = document.querySelector(`.toggle-arrow[data-target="#${id}"]`);
+    // Correctly find the <a> tag that controls this collapse element
+    const triggerLink = document.querySelector(`a[data-bs-toggle="collapse"][href="#${id}"]`);
 
-    collapseEl.addEventListener('show.bs.collapse', () => {
-      if (arrowSpan) arrowSpan.textContent = '⬇';
-    });
+    // Find the arrow span specifically within that link
+    const arrowSpan = triggerLink ? triggerLink.querySelector('.toggle-arrow') : null;
 
-    collapseEl.addEventListener('hide.bs.collapse', () => {
-      if (arrowSpan) arrowSpan.textContent = '➤';
-    });
+    if (arrowSpan) {
+      collapseEl.addEventListener('show.bs.collapse', () => {
+        arrowSpan.textContent = '⬇'; // Down arrow when open
+      });
+
+      collapseEl.addEventListener('hide.bs.collapse', () => {
+        arrowSpan.textContent = '➤'; // Triangle pointer when closed
+      });
+    }
   });
 </script>
 
@@ -315,14 +588,14 @@
     document.getElementById('copyButton').addEventListener('click', function() {
         // Find the textarea element
         var bibtexTextarea = document.getElementById('bibtex');
-        
+
         // Use the modern Clipboard API
         navigator.clipboard.writeText(bibtexTextarea.value).then(() => {
             // Give user feedback
             this.textContent = 'Copied!';
             this.classList.remove('btn-secondary');
             this.classList.add('btn-success');
-            
+
             // Revert the button text after 2 seconds
             setTimeout(() => {
                 this.textContent = 'Copy';
