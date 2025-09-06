@@ -354,30 +354,6 @@
                                                 <li><span class="api-func">ComputeFlowsForOccupancyGrid</span><p class="description">Combine dynamic and static flow to produce a complete scene flow grid.</p></li>
                                             </ul>
                                         </div>
-                                        <div class="toolkit-card">
-                                            <h3 class="section-title">Evaluation Metrics</h3>
-                                            <ul class="api-list">
-                                                <li><span class="api-func">FindGMMForCategory</span><p class="description">Fit a Gaussian-Mixture Model (GMM) to object dimensions for a given category.</p></li>
-                                                <li><span class="api-func">ComputeObjectLikelihoods</span><p class="description">Score object shapes against the pretrained GMM to get plausibility probabilities.</p></li>
-                                                <li><span class="api-func">ComputeTemporalShapeConsistencyByTracking</span><p class="description">Track objects and report mean IoU of consecutive shapes for temporal consistency.</p></li>
-                                                <li><span class="api-func">ComputeStaticConsistency</span><p class="description">Warp static voxels between frames and compute IoU for background stability.</p></li>
-                                                <li><span class="api-func">ComputeIoU</span><p class="description">Compute standard intersection-over-union between two occupancy grids.</p></li>
-                                                <li><span class="api-func">ComputeIoUForCategory</span><p class="description">Compute IoU restricted to voxels of a single semantic class.</p></li>
-                                            </ul>
-                                        </div>
-                                        <div class="toolkit-card">
-                                            <h3 class="section-title">Visualization API</h3>
-                                             <ul class="api-list">
-                                                <li><span class="api-func">FillRoadInOcc</span><p class="description">Ensure the bottom-most slice of the occupancy grid contains labeled road voxels.</p></li>
-                                                <li><span class="api-func">CreateOccHandle</span><p class="description">Build a full Open3D visualizer for rendering occupancy grids.</p></li>
-                                                <li><span class="api-func">AddFlowToVisHandle</span><p class="description">Draw flow vectors on the Open3D visualizer for motion inspection.</p></li>
-                                                <li><span class="api-func">AddCenterEgoToVisHandle</span><p class="description">Add the ego vehicle model to the visualizer.</p></li>
-                                                <li><span class="api-func">VisualizeOcc</span><p class="description">Create a visualizer for a static occupancy grid.</p></li>
-                                                <li><span class="api-func">VisualizeOccFlow</span><p class="description">Visualize both occupancy and voxel-level flow vectors in 3D.</p></li>
-                                                <li><span class="api-func">VisualizeOccFlowFile</span><p class="description">Load and visualize data from an .npz file.</p></li>
-                                                <li><span class="api-func">RotateO3DCamera</span><p class="description">Load camera parameters and apply them to the current visualizer view.</p></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </section>
                             </div>
